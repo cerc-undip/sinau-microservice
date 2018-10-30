@@ -17,8 +17,14 @@ else {
     $list_anggota['status'] = 404;
     $list_anggota['message']= "Not Found";
     $list_anggota['data']   = null;
+
+    echo json_encode($list_anggota);
   }
   else {
-    // todo
+    $list_anggota['status'] = 200;
+    $list_anggota['message']= "OK";
+    $list_anggota['data']   = $anggota[$_GET['club']];
+
+    echo json_encode($list_anggota);
   }
 }
